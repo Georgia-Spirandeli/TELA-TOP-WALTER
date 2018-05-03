@@ -1,0 +1,8 @@
+@echo off
+cd z:\walter_2018\wpgeorgia
+docker stop wpgeorgia_wordpress_1
+docker rm wpgeorgia_wordpress_1
+docker rmi georgia:wordpress
+docker build -t georgia:wordpress z:\walter_2018\wpgeorgia
+docker-compose up -d -f z:\walter_2018\wpgeorgia\docker-compose.yml --force-recreate
+pause 
